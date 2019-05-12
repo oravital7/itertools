@@ -204,5 +204,5 @@ int main()
 
     std::cout << "*** Grade: " << grade << " ***" << std::endl;
 
-    return grade;
+    return 0;
 }
