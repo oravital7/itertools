@@ -76,12 +76,12 @@ public:
 public:
     auto begin()
     {
-        return iterator{a, pair<T2, T2>(a.second, b.second)};
+        return iterator{a, std::pair<T2, T2>(a.second, b.second)};
     }
 
     auto end()
     {
-        return iterator{pair<T1, T2>(b.first, b.second), pair<T2, T2>(a.second, b.second)};
+        return iterator{std::pair<T1, T2>(b.first, b.second), std::pair<T2, T2>(a.second, b.second)};
     }
 };
 

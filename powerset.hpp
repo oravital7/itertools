@@ -1,3 +1,5 @@
+#pragma once
+
 #include <iostream>
 
 namespace itertools
@@ -9,7 +11,7 @@ private:
     T a;
 
 public:
-    Itpowerset(T a) : a(a) {}
+    Itpowerset(T &a) : a(a) {}
 
     class iterator
     {
@@ -96,9 +98,8 @@ std::ostream &operator<<(std::ostream &os, std::pair<T1, uint> &a)
         if (i & a.second)
         {
             if (!first)
-            {
                 os << ",";
-            }
+                
             os << *it;
             first = false;
         }

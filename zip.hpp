@@ -1,5 +1,7 @@
 #pragma once
 
+#include <iostream>
+
 namespace itertools
 {
 
@@ -22,7 +24,7 @@ public:
     public:
         iterator(std::pair<T1, T2> it) : it(it) {}
 
-        pair<T1,T2> &operator*()
+        std::pair<T1,T2> &operator*()
         {
             return it;
         }

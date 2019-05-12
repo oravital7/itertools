@@ -58,6 +58,5 @@ int main() {
 	for (auto subset: powerset(chain(range('a','c'),range('x','z'))))
 		cout << subset;  // {}{a}{b}{a,b}{x}{a,x}{b,x}{a,b,x}{y}{a,y}{b,y}{a,b,y}{x,y}{a,x,y}{b,x,y}{a,b,x,y}
 
-
 	return 0;
 }
