@@ -35,7 +35,7 @@ int main()
     {
         testCase.CHECK_EQUAL(i, arr[i]);
     }
-    
+
     for (auto i : range(99, 102))
     {
         expected += to_string(i);
@@ -49,8 +49,8 @@ int main()
         check++;
     }
     testCase.CHECK_EQUAL(check, 25);
-    check = 0;
 
+    check = 0;
     for (auto i : powerset(string("abcba")))
     {
         check++;
@@ -142,6 +142,63 @@ int main()
     buffer >> expected;
 
     testCase.CHECK_EQUAL(expected == "{}{1}", true);
+
+
+    check =0;
+    buffer.clear();
+    for (auto i : zip(zip(range(0,5),range(5,10)),zip(range(0,5),range(5,10))))
+    {
+        check++;
+        buffer << i;
+    }
+    expected = "";
+    buffer >> expected;
+    testCase.CHECK_EQUAL(expected=="0,5,0,51,6,1,62,7,2,73,8,3,84,9,4,9", true);
+
+    check =0;
+    buffer.clear();
+    for (auto i : zip(zip(range(0,5),range(5,10)),zip(range('a','f'),range('a','f'))))
+    {
+        check++;
+        buffer << i;
+    }
+    expected = "";
+    buffer >> expected;
+    testCase.CHECK_EQUAL(expected=="0,5,a,a1,6,b,b2,7,c,c3,8,d,d4,9,e,e", true);
+
+    check = 0;
+    for (auto i : product(chain(range(-0.5, 10.5),range(0,5)),chain(range('a', 'f'),range('a','f'))))
+    {
+        check++;
+    }
+    testCase.CHECK_EQUAL(check, 160);
+
+    check = 0;
+    for (auto i : product(chain(range(-0.5, 0.5),range(0,0)),chain(range('a', 'b'),range('a','b'))))
+    {
+        check++;
+    }
+    testCase.CHECK_EQUAL(check, 2);
+
+    check = 0;
+    for (auto i : product(range(0,0),range(0,0)))
+    {
+        check++;
+    }
+    testCase.CHECK_EQUAL(check, 0);
+
+    check = 0;
+    expected = "";
+    buffer.clear();
+    for (auto i : product(range(0,0),range(0,1)))
+    {
+        check++;
+        buffer << i;
+    }
+    buffer >> expected;
+    testCase.CHECK_EQUAL(check, 0);
+    testCase.CHECK_EQUAL(expected=="", true);
+
 
     grade = testCase.grade();
 
