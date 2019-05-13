@@ -60,12 +60,12 @@ public:
         }
     };
 
-    iterator begin()
+    iterator begin() const
     {
         return iterator{a};
     }
 
-    iterator end()
+   iterator end() const
     {
         return iterator{b};
     }

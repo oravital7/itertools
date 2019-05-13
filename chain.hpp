@@ -87,12 +87,12 @@ public:
     };
 
 public:
-    auto begin()
+    auto begin() const
     {
         return iterator{a, b, true};
     }
 
-    auto end()
+    auto end() const
     {
         return iterator{a, b, false};
     }

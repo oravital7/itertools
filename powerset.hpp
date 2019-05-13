@@ -59,12 +59,12 @@ public:
     };
 
 public:
-    auto begin()
+    auto begin() const
     {
         return iterator{std::pair<T, uint>(a, 0)};
     }
 
-    auto end()
+    auto end() const
     {
         int i = 1;
         auto it = a.begin();
