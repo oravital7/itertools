@@ -8,8 +8,8 @@ class Itchain
 {
 
 private:
-    const std::pair<T1, T1> a;
-    const std::pair<T2, T2> b;
+    const std::pair<T1, T1> a; // a.begin(), a.end()
+    const std::pair<T2, T2> b; // b.begin(), b.end()
 
 public:
     Itchain(std::pair<T1, T1> a, std::pair<T2, T2> b) : a(a), b(b) {}
@@ -17,14 +17,14 @@ public:
     class iterator
     {
     private:
-        std::pair<T1, T1> aPoint;
-        std::pair<T2, T2> bPoint;
+        std::pair<T1, T1> aPoint; // a.begin(), a.end()
+        std::pair<T2, T2> bPoint; // b.begin(), b.end()
         bool first;
 
     public:
         iterator(std::pair<T1, T1> a, std::pair<T2, T2> b, bool first) : aPoint(a), bPoint(b)
         {
-            this->first = first;
+            this->first = first; // check first iterator
         }
 
         auto &operator*()
@@ -98,6 +98,7 @@ public:
     }
 };
 
+// Create correct class by type
 template <typename T1, typename T2>
 auto chain(T1 a, T2 b)
 {

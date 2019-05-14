@@ -15,7 +15,7 @@ public:
 
     class iterator
     {
-        std::pair<T, uint> it;
+        std::pair<T, uint> it; // uint - save the bits we need to print
 
     public:
         iterator(std::pair<T, uint> it) : it(it) {}
@@ -85,6 +85,7 @@ auto powerset(T a)
 
 } // namespace itertools
 
+// insert to ostream the correct set by bits
 template <typename T1>
 std::ostream &operator<<(std::ostream &os, std::pair<T1, uint> &a)
 {
@@ -93,7 +94,7 @@ std::ostream &operator<<(std::ostream &os, std::pair<T1, uint> &a)
     auto end = a.first.end();
     int i = 1;
     bool first = true;
-    while (it != end)
+    while (it != end) 
     {
         if (i & a.second)
         {

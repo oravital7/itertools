@@ -10,8 +10,8 @@ class Itzip
 {
 
 private:
-    std::pair<T1, T2> a;
-    std::pair<T1, T2> b;
+    std::pair<T1, T2> a; // a.begin(), b.begin()
+    std::pair<T1, T2> b; // a.end(), b.end()
 
 public:
     Itzip(std::pair<T1, T2> &a, std::pair<T1, T2> &b) : a(a), b(b) {}

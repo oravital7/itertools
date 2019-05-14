@@ -7,7 +7,7 @@ template<typename T>
 class Itrange
 {
 private:
-    const T a, b;
+    const T a, b; // a - start, b - end.
 
 public:
     Itrange(const T &a, const T &b) : a(a), b(b) {}
