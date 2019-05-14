@@ -8,11 +8,11 @@ class Itproduct
 {
 
 private:
-    std::pair<T1, T2> a;
-    std::pair<T1, T2> b;
+    const std::pair<T1, T2> a;
+    const std::pair<T1, T2> b;
 
 public:
-    Itproduct(std::pair<T1, T2> a, std::pair<T1, T2> b) : a(a), b(b) {}
+    Itproduct(std::pair<T1, T2> &a, std::pair<T1, T2> &b) : a(a), b(b) {}
 
     class iterator
     {

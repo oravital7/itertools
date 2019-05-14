@@ -8,8 +8,8 @@ class Itchain
 {
 
 private:
-    std::pair<T1, T1> a;
-    std::pair<T2, T2> b;
+    const std::pair<T1, T1> a;
+    const std::pair<T2, T2> b;
 
 public:
     Itchain(std::pair<T1, T1> a, std::pair<T2, T2> b) : a(a), b(b) {}

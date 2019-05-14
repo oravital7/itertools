@@ -8,10 +8,10 @@ template <typename T>
 class Itpowerset
 {
 private:
-    T a;
+   const T a;
 
 public:
-    Itpowerset(T &a) : a(a) {}
+    Itpowerset(const T &a) : a(a) {}
 
     class iterator
     {

@@ -14,7 +14,7 @@ private:
     std::pair<T1, T2> b;
 
 public:
-    Itzip(std::pair<T1, T2> a, std::pair<T1, T2> b) : a(a), b(b) {}
+    Itzip(std::pair<T1, T2> &a, std::pair<T1, T2> &b) : a(a), b(b) {}
 
     class iterator
     {
@@ -22,7 +22,7 @@ public:
         std::pair<T1, T2> it;
 
     public:
-        iterator(std::pair<T1, T2> it) : it(it) {}
+        iterator(std::pair<T1, T2> &it) : it(it) {}
 
         std::pair<T1,T2> &operator*()
         {
