@@ -10,7 +10,7 @@ class Itpowerset
 private:
    const T a;
 
-public:
+public: // Test
     Itpowerset(const T &a) : a(a) {}
 
     class iterator
